@@ -2,13 +2,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: podinfo-prod
-  namespace: prod
+  name: podinfo-hotfix
+  namespace: hotfix
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: semver:~0.4
+    filter.fluxcd.io/chart-image: glob:hotfix-*
 spec:
-  releaseName: podinfo-prod
+  releaseName: podinfo-hotfix
   chart:
     git: git@github.com:kathLes/helm-operator-get-started
     path: charts/podinfo
@@ -16,5 +16,7 @@ spec:
   values:
     image:
       repository: kathles/podinfo
-      tag: 0.4.11
-    replicaCount: 3
+      tag: hotfix-hdtwcel9
+    replicaCount: 1
+    hpa:
+      enabled: false
