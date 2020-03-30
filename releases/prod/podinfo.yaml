@@ -16,5 +16,5 @@ spec:
   values:
     image:
       repository: kathles/podinfo
-      tag: 0.4.10
+      tag: 0.4.12
     replicaCount: 3
