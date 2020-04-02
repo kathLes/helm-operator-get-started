@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: kathles/podinfo
-      tag: dev-ppvbo3eb
+      tag: dev-j1dfcrsf
     replicaCount: 1
     hpa:
       enabled: false
