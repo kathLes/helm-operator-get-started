@@ -12,7 +12,7 @@ spec:
   chart:
     git: git@github.com:kathles/helm-operator-get-started
     path: charts/podinfo
-    ref: dev
+    ref: master
   values:
     image:
       repository: kathles/podinfo
