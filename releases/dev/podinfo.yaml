@@ -10,13 +10,13 @@ metadata:
 spec:
   releaseName: podinfo-dev
   chart:
-    git: git@github.com:kathLes/helm-operator-get-started
+    git: git@github.com:kathles/helm-operator-get-started
     path: charts/podinfo
     ref: master
   values:
     image:
       repository: kathles/podinfo
-      tag: dev-hdtwcel9
+      tag: dev-2svnmeua
     replicaCount: 1
     hpa:
       enabled: false

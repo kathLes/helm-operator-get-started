@@ -1,0 +1,24 @@
+To DEV env
+local -> git commit
+      -> docker build image + commit message
+      -> docker push (to docker.hub)
+			-> fluxcd.io/automate = true 
+				-> flux updates the image field in the yaml 
+				-> flux commit & push to git
+				-> flux apply the changes on the cluster
+					-> HelmRelease object is changed in the cluster	
+						-> Kubernates API notify the Flux Helm Operator 
+							-> The Helm Operator perform a Helm Release Upgrade
+To ACC / STG env
+-> create a release candidate by merging the podinfo code from dev into the stg branch	
+-> The CI would kick in and publish a new image (docker build image, docker push)
+	-> git commit
+        -> docker build image + commit message
+	-> docker push (to docker.hub)
+
+To PROD env
+-> create a release candidate by merging the podinfo code from acc into the prod branch	
+-> The CI would kick in and publish a new image (docker build image, docker push)
+	-> instead of tagging the images with the Git commit
+	-> docker build image + commit message
+	-> docker push (to docker.hub)
